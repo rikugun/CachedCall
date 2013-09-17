@@ -1,9 +1,27 @@
 # 缓存交易调用
 
 ##	现状
-	
 
 目前CRM交易调用存在这样的问题,某个(些)交易调用时间较长,查询的内容重复,或频繁查询.比如产品过滤,用户查询,详单查询. 我们可以通过缓存交易的返回结果,重复调用的时候直接从缓存中获取结果,一定时间内不再重复调用.
+
+
+##	Feature
+新增一个服务调用方法
+
+	outPkg = EasyCallBusi.callServiceCache("IIXJ0290", inPkg, errStruct, adapter);
+
+
+**adapter**为新增的适配器
+
+	public interface CacheAdapter {
+		//比较2个数据包请求是否相同,如果相同则缓存/获取缓存内容
+	    public int compare(DataPackage pkg1, DataPackage pkg2);
+		//获取请求包的标识key,唯一
+	    public String getKey(DataPackage pkg);
+		//获取缓存的时间
+	    public long getDuration();
+	}	
+
 
 
 
