@@ -26,7 +26,7 @@
 
 
 ## 缓存调用前后的比较
-
+参考 dic/gx/action/CacheTest.java
 
 ### 缓存前
 

@@ -1,4 +1,4 @@
-package dic.gx.test.action;
+package dic.gx.action;
 
 import com.bss.common.app.AppException;
 import com.bss.common.event.utils.DataPackUtil;
